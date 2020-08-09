@@ -6,12 +6,12 @@
         <div class="row">
             <div class="col-md-2">Filter by:</div>
             <div class="col-md-4">
-                <input type="text"/>
+                <input type="text" [(ngModel)]="listFilter" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h4>Filtered by: </h4>
+                <h4>Filtered by: {{listFilter}} </h4>
             </div>
         </div>
         <div class="table-responsive">
@@ -21,13 +21,14 @@
                 <th>
                         <button class="btn btn-primary"
                         (click)="toggleImage()">
-                            Show Image
+                        <!-- Conditonal Operator: show image is true, hide; otherwise show -->             
+                        {{showImage ? "Hide Image" : "Show Image"}}
                         </button>
                     </th>
                         <th>Product</th>
                         <th>Author</th>
                         <th>Code</th>
-                        <th>Available</th>
+                        <th>Date</th>
                         <th>Year</th>
                         <th>Price</th>
                         <th>5 Star Rating</th>
@@ -43,10 +44,10 @@
                     </td>
                     <td>{{ product.productName }}</td>
                     <td>{{ product.Author }}</td>
-                    <td>{{ product.productCode }}</td>
+                    <td>{{ product.productCode | lowercase }}</td>
                     <td>{{ product.releaseDate }}</td>
                     <td>{{ product.description }}</td>
-                    <td>{{ product.price}}</td>
+                    <td>{{ product.price | currency}}</td>
                     <td>{{ product.starRating}}</td>
                 </tr>
             </tbody>
@@ -56,3 +57,15 @@
     </div>
 
 </div>
+
+<!--
+A winter of Fire
+Frankestin
+Counte of Monte Cristo
+Green Angel 4
+Withering Heights 4
+The necromancer 5
+Alice through the looking glass 5
+the murders in the rue morgue 5
+The yellow wallpaper 5
+-->
