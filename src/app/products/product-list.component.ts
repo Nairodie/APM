@@ -8,11 +8,21 @@ import { IProduct } from "./product";
 })
 
 export class ProductListComponent implements OnInit{
-    pageTitle: string = "Product List";
+    pageTitle: string = "Book List";
     imageWidth: number = 100;
     imageMargin: number = 2;
     showImage: boolean = false;
-    listFilter: string = "title";
+
+    _listFilter: string;
+    get listFilter(): string {
+        return this._listFilter;
+    }
+    set listFilter(value: string) {
+        this._listFilter = value;
+        this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+    }
+
+    filteredProducts: IProduct[];
     products: IProduct[] = [
             {
               "productId": 1,
@@ -22,7 +32,7 @@ export class ProductListComponent implements OnInit{
               "releaseDate": "1922",
               "description": "Ulysses chronicles the peripatetic appointments and encounters of Leopold Bloom in Dublin in the course of an ordinary day, 16 June 1904",
               "price": 19.95,
-              "starRating": 5.0,
+              "starRating": 5,
               "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/JoyceUlysses2.jpg"
             },
             {
@@ -49,6 +59,17 @@ export class ProductListComponent implements OnInit{
             }     
               
         ];
+
+        constructor() {
+            this.filteredProducts = this.products;
+            this.listFilter = "winter";
+        }
+
+        performFilter(filterBy: string): IProduct[] {
+            filterBy = filterBy.toLocaleLowerCase();
+            return this.products.filter((product: IProduct) =>
+                product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+        }
 
         toggleImage(): void {
             this.showImage = !this.showImage;
