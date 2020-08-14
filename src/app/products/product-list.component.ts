@@ -8,11 +8,12 @@ import { ProductService } from "./product.service";
     styleUrls: ["./product-list.component.css"]
 })
 
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit {
     pageTitle: string = "Book List";
     imageWidth: number = 100;
     imageMargin: number = 2;
     showImage: boolean = false;
+    errorMessage: string;
 
     _listFilter: string;
     get listFilter(): string {
@@ -42,9 +43,14 @@ export class ProductListComponent implements OnInit{
         toggleImage(): void {
             this.showImage = !this.showImage;
         }
-
+        //component subscribes to the observable 
         ngOnInit(): void {
-            this.products = this.productService.getProducts();
-            this.filteredProducts = this.products;
+            this.productService.getProducts().subscribe({
+                next: products =>  { 
+                    this.products = products;
+                    this.filteredProducts = this.products;
+                },
+                error: err => this.errorMessage = err
+            });
         }
-}
+    }
