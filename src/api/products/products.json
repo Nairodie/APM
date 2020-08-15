@@ -31,5 +31,27 @@
       "price": 4.95,
       "starRating": 5,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81B2xmUcGbL.jpg"
-  }     
+  },  
+  {
+    "productId": 3,
+    "productName": "",
+    "Author": "",
+    "productCode": "GDN-0055",
+    "releaseDate": "",
+    "description": "todo",
+    "price": 1.95,
+    "starRating": 3,
+    "imageUrl":""
+  },
+  {
+    "productId": 3,
+    "productName": "Winter of Fire",
+    "Author": "Sherryl Jordan",
+    "productCode": "GDN-0077",
+    "releaseDate": "1933",
+    "description": "todo",
+    "price": 7.50,
+    "starRating": 4,
+    "imageUrl":""
+  }       
 ]
