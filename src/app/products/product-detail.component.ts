@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { IProduct } from "./product";
 
@@ -11,12 +11,16 @@ export class ProductDetailComponent implements OnInit {
   pageTitle: string = "Product Detail";
   product: IProduct;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
+
+  onBack() : void {
+    this.router.navigate(['/products']);
+  }
 
   ngOnInit() {
     //let defines a blocked scope variable
     //+ is a JS shortcut to convert the parameter string to a numeric id
-    let id = +this.route.snapshot.paramMap.get("id");
+    let id = +this.route.snapshot.paramMap.get('id');
     //ES2015 backticks to define a template string and display the id 
     this.pageTitle += `: ${id}`;
     this.product = {
