@@ -27,21 +27,21 @@
       "Author": "Sherryl Jordan",
       "productCode": "GDN-0033",
       "releaseDate": "1933",
-      "description": "todo",
+      "description": "In a grim future world where the sun has vanished from the sky, people glean what warmth and light they can from the firestones mined by an untouchable caste known as the Quelled.",
       "price": 4.95,
       "starRating": 5,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81B2xmUcGbL.jpg"
   },  
   {
     "productId": 3,
-    "productName": "",
-    "Author": "",
+    "productName": "Dune",
+    "Author": "Frank Herbert",
     "productCode": "GDN-0055",
-    "releaseDate": "",
-    "description": "todo",
-    "price": 1.95,
-    "starRating": 3,
-    "imageUrl":""
+    "releaseDate": "1966",
+    "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the spice melange, a drug capable of extending life and enhancing consciousness.",
+    "price": 7.95,
+    "starRating": 5,
+    "imageUrl":"https://en.wikipedia.org/wiki/Dune_(novel)#/media/File:Dune-Frank_Herbert_(1965)_First_edition.jpg"
   },
   {
     "productId": 3,
